@@ -59,6 +59,11 @@ class App extends React.Component {
             {this.state.persons.map(person => <tr key={person.name}><td>{person.name}</td><td>{person.number}</td></tr>)}
           </tbody>
         </table>
+        {/*
+        MIKSI EI TOIMI SEURAAVALLA KOODIRIVILLÄ JA ERILLISELLÄ PERSON-KOMPONENTILLA? 
+        <Person key={person.id} name={person.name} /> 
+        TULEE VIRHE: TARVITAAN UNIQUE KEY tai vastaavaa */} 
+        
       </div>
     )
   }
