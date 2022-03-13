@@ -16,13 +16,26 @@ class App extends React.Component {
     console.log('nappi painettu')
     console.log(event.target)
     event.preventDefault()
-    const personObject = {name: this.state.newName}
-    const persons = this.state.persons.concat(personObject)
-    this.setState({
-      persons: persons,
-      newName: ''
+    
+    const result = this.state.persons.find(elem => elem === this.state.newName)
+    console.log(result)
+    console.log(this.state.newName)
+    console.log()
+    
+    if(result===undefined){
+      const personObject = {name: this.state.newName}
+      const persons = this.state.persons.concat(personObject)
+      this.setState({
+        persons: persons,
+        newName: '' 
+      })
+    }else{
       
-    })
+    }
+
+      
+  
+      
   }
 
   handlePersonChange = (event) => {
@@ -51,7 +64,7 @@ class App extends React.Component {
         {/*
         MIKSI EI TOIMI SEURAAVALLA KOODIRIVILLÄ JA ERILLISELLÄ PERSON-KOMPONENTILLA? 
         <Person key={person.id} name={person.name} /> 
-        TULI VIRHE: TARVITAAN UNIQUE KEY */} 
+        TULEE VIRHE: TARVITAAN UNIQUE KEY */} 
         
       </div>
     )
