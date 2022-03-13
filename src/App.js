@@ -13,12 +13,9 @@ class App extends React.Component {
   }
 
   addPerson = (event) => {
-    console.log('nappi painettu')
     console.log(event.target)
     event.preventDefault()
-    
     const result = this.state.persons.find(elem => elem.name === this.state.newName)
-    
     if(result===undefined){
       const personObject = {name: this.state.newName}
       const persons = this.state.persons.concat(personObject)
@@ -29,10 +26,6 @@ class App extends React.Component {
     }else{
       alert("Cannot have the same name twice!")
     }
-
-      
-  
-      
   }
 
   handlePersonChange = (event) => {
