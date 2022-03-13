@@ -17,10 +17,7 @@ class App extends React.Component {
     console.log(event.target)
     event.preventDefault()
     
-    const result = this.state.persons.find(elem => elem === this.state.newName)
-    console.log(result)
-    console.log(this.state.newName)
-    console.log()
+    const result = this.state.persons.find(elem => elem.name === this.state.newName)
     
     if(result===undefined){
       const personObject = {name: this.state.newName}
@@ -30,7 +27,7 @@ class App extends React.Component {
         newName: '' 
       })
     }else{
-      
+      alert("Cannot have the same name twice!")
     }
 
       
